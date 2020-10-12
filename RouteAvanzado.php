@@ -18,7 +18,7 @@
     //$r->addRoute("mostrar", "GET", "db_controller", "ShowProductoEspecifico"); //
     $r->addRoute("login", "GET", "db_controllerAdmin", "login");
     $r->addRoute("ver/:ID", "GET", "db_controller", "GetProductFiltro");
-
+    $r->addRoute("filtramos", "POST", "db_controller", "ShowfiltrodeCategorias");
     
 
     // -------------------------- PARA LOS ADMIN ------------------------------

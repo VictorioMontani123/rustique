@@ -9,7 +9,11 @@
       <th scope="col">{$color}</th>
       <th scope="col"> {$precio}</th>
       <th scope="col"> {$especificacion}</th>
-      <th scope="col" >  {$TituloCategoria}   <select name=" " id="filtrocategoria"> <option value="value1">TODOS</option> <option value="value1">EXTERIOR</option>  <option value="value1">INTERIOR</option> </select> </th>
+      <th scope="col" >  {$TituloCategoria}  
+      <form action="filtramos" method="POST">
+      <select name="opcion" id="filtrocategoria"> <option value="TODOS">TODOS</option> <option value="Exterior">EXTERIOR</option>  <option value="Interior">INTERIOR</option> </select> <button type="submit" class="formatoboton" id="boton" >Filtrar</button>   </th>
+       
+      </form>
     </tr>
   </thead>
   {foreach from=$productos item=producto}
@@ -26,9 +30,6 @@
       <td> {$producto->especificacion} </td>
      
       {foreach from=$Categorias item=categoria}
-      
-
-      
       {if $categoria->id eq $producto->id_categoria}  <!-- este no se tiene que poder editar   !!!-->
       <td> {$categoria->nombre_categoria}</td> 
       {/if}

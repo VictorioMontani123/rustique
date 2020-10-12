@@ -93,6 +93,24 @@ class db_controller {
 
     }
 
+    public function ShowfiltrodeCategorias(){
+        $categoria = $_POST['opcion'];
+        $arcategorias = $this->model->GetCategoria();
+        //var_dump($arcategorias);
+        $productos = $this->model->GetProduct();
+        foreach($arcategorias as $arcategoria){
+            //var_dump($categoria);
+            //var_dump($arcategoria->nombre_categoria);
+            if($categoria == $arcategoria->nombre_categoria){
+                //var_dump($arcategorias);
+                 $productos = $this->model->ShowProductosPorCategoria($arcategoria->id);
+            }
+           
+        }
+        $this->view->ShowProductos($productos, $arcategorias);
+        
+    }
+
 }
 /*
 $contenedor = GetProduct();

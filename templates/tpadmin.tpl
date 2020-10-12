@@ -9,7 +9,8 @@
       <th scope="col">{$color}</th>
       <th scope="col"> {$precio}</th>
       <th scope="col"> {$especificacion}</th>
-      <th scope="col" >  {$TituloCategoria}   <select name=" " id="">  <option value="value1">EXTERIOR</option>  <option value="value1">INTERIOR</option> </select> </th>
+      <th scope="col" >  {$TituloCategoria}   
+      </th>
     
     </tr>
   </thead>

@@ -13,6 +13,11 @@ class DataModel{
       return $sentencia->fetchAll(PDO::FETCH_OBJ);
   }
 
+  function ShowProductosPorCategoria($categoria){
+    $sentencia = $this->db->prepare("SELECT * FROM producto WHERE id_categoria = ?");
+      $sentencia->execute([$categoria]);
+      return $sentencia->fetchAll(PDO::FETCH_OBJ);
+  }
 
   
   function GetCategoria(){
