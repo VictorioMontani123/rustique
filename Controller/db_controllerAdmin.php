@@ -25,15 +25,31 @@ class db_controllerAdmin {
         if(!empty($usuarioform) && !empty($contraseniaform)){
            $usuarios = $this->model->GetUsuario($usuarioform);
           if($usuarios && ($contraseniaform ==  $usuarios->contraseña) ){
-           
-          } else {
+
+            session_start(); // abrimos session y guardamos el id y el nombre hasta que la cierre
+            $_SESSION['IS_LOGGED'] == true;
+            $_SESSION['ID_USER'] = $usuarios->id;
+            $_SESSION['NOMBRE'] = $usuarios->nombre; 
+
+            $this->view->ShowPredeterminado();
             
+          } else {
             echo "no se pudo";
           }
           
         
         }
         }
+
+    public function logout(){
+        session_start();
+        session_destroy();
+
+
+        $this->view->BacktoLogin();
+
+
+    }
 
     
 

@@ -22,7 +22,9 @@
             <li class="libotonera" id="libotonera">
                 <ul id="mostrar"> <a href="home" class="botones">Home</a></ul>
                 <ul id="mostrar"> <a href="productos" class="botones">Productos</a></ul>
-                <ul id="mostrar"> <a href="login" class="botones">Login</a></ul>
+                
+                
+                <ul id="mostrar"> <a href="logout" class="botones">Logout</a></ul>
             </li>
         </nav>
     </header>

@@ -20,10 +20,56 @@ class db_controller {
 
     }
 
-    public function ShowProductos(){   // nos muestra todos los productos
+    public function ShowProductos(){
         $productos = $this->model->GetProduct();
         $Categorias = $this->model->GetCategoria();
         $this->view->ShowProductos($productos, $Categorias);
+
+    }
+
+    public function GetProductFiltro($filtro = null){
+        $filtro = $filtro[':ID'];
+        $productos = $this->model->GetProductFiltro($filtro);
+        $this->view->ShowAlone($productos);
+        
+        //$this->view->ShowPredeterminado();
+    }
+
+    
+
+   
+
+
+    //               ---------------------------- SOLO ADMINISTRADORES --------------------------------
+ 
+
+
+
+    public function ShowProductosAdmin(){   // nos muestra todos los productos y el ABM
+        $this->verificarusuariologeado();  // barrera de seguridad
+
+        $productos = $this->model->GetProduct();
+        $Categorias = $this->model->GetCategoria();
+        $this->view->ShowProductosAdmin($productos, $Categorias);
+        
+    }
+
+    public function editarProducto($id = null){
+        // $id = $id[':ID'];
+        // $productos = $this->model->GetProductFiltro($id);
+ 
+        
+         $this->model->EditarProducto($_POST['EditNombre'],$_POST['EditColor'],$_POST['EditEspecificacion'],$_POST['EditPrecio'],$_POST['EditIdCategoria'],$_POST['EditId']);
+         
+         $this->view->ShowPredeterminadoADMIN();
+    }
+
+    public function Delete($id = null){
+        $id = $id[':ID'];
+        $this->model->DeleteProduct($id);
+
+        $this->view->ShowPredeterminadoADMIN();
+
     }
 
     public function InsertProduct(){  // agregamos un producto desde la view del admin
@@ -33,34 +79,20 @@ class db_controller {
         //}
         // $this->view->ShowError(      );
 
-        $this->view->ShowPredeterminado();
-
-    }
-    public function GetProductFiltro($filtro = null){
-        $filtro = $filtro[':ID'];
-        $productos = $this->model->GetProductFiltro($filtro);
-        $this->view->ShowAlone($productos);
-        
-        //$this->view->ShowPredeterminado();
-    }
-
-    public function Delete($id = null){
-        $id = $id[':ID'];
-        $productos = $this->model->DeleteProduct($id);
-
-        $this->view->ShowPredeterminado();
+        $this->view->ShowPredeterminadoADMIN();
 
     }
 
-    public function editarProducto($id = null){
-       // $id = $id[':ID'];
-       // $productos = $this->model->GetProductFiltro($id);
+    private function verificarusuariologeado(){
+        session_start();
+        if(!isset($_SESSION['ID_USER'])){
+            $this->view->RedirigiraLogin();
+            die();
 
-       
-        $this->model->EditarProducto($_POST['EditNombre'],$_POST['EditColor'],$_POST['EditEspecificacion'],$_POST['EditPrecio'],$_POST['EditIdCategoria'],$_POST['EditId']);
-        
-        $this->view->ShowPredeterminado();
+        }
+
     }
+
 }
 /*
 $contenedor = GetProduct();

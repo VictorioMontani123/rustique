@@ -20,23 +20,15 @@ class DataViewAdmin{
     }
 
 
-    public function ProductosAdmin($Categorias, $productos){
-        $this->smarty->assign('titulo', "LISTA DE PRODUCTOS");
-        $this->smarty->assign('nombre', "NOMBRE");
-        $this->smarty->assign('color', "COLOR");
-        $this->smarty->assign('especificacion', "ESPECIFICACION");
-        $this->smarty->assign('precio', "PRECIO");
-        $this->smarty->assign('TituloCategoria', "CATEGORIA");
+    
 
-        
-        $this->smarty->assign('Categorias', $Categorias);
-        $this->smarty->assign('productos', $productos);
-        $this->smarty->display('templates/tp.tpl');
-        
-
+    function ShowPredeterminado(){
+        header("Location: ".BASE_URL."productosadmin"); // para que vuelva despues de que ejecute la function
     }
 
-
+    function BacktoLogin(){
+        header("Location: ".BASE_URL."login"); // para que vuelva despues de que ejecute la function
+    }
 
 
 

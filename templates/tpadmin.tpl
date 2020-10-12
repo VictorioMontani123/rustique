@@ -1,4 +1,4 @@
-{include "header.tpl"}
+{include "headeradmin.tpl"}
 
 
 <table class="table table-sm">
