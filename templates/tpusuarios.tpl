@@ -1,7 +1,7 @@
 {include "header.tpl"}
 
 
-<table class="table table-sm">
+<table class="table table-bordered table-dark">
     <thead>
     <tr>
       <th scope="col">{$titulo}</th>
@@ -40,8 +40,12 @@
 
 
 
-
   {/foreach}
+
+
+
+
+
 
 
 </table>

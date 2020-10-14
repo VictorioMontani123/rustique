@@ -34,7 +34,7 @@ class db_controllerAdmin {
             $this->view->ShowPredeterminado();
             
           } else {
-            echo "no se pudo";
+            $this->view->ShowLoginError();
           }
           
         

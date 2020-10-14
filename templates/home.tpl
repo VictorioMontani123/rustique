@@ -3,13 +3,13 @@
  <!-- SECTION QUE EXPLICA QUIENES SOMOS Y DONDE NOS ENCONTRAMOS  -->
     <section class="QS">
         <!-- titulo del quienes somos  -->
-        <h1 class="tituloQS">¿Quienes somos?</h1>
+        <h1 class="tituloQS text-dark">¿Quienes somos?</h1>
         <!-- fin del titulo quienes somos -->
         
         <!-- ARTICULO CON PARRAFO QUIENES SOMOS -->
         <article class="articuloQS">
             <!-- parrafo explicativo de quienes somos -->
-            <p class="parrafoQS">
+            <p class="parrafoQS text-dark" style="bg-dark">
                 Somos una fábrica de revestimientos para pisos y paredes de fabicación propia; que con la llegada de la
                 nueva década METALCOOP LTDA, decidió lanzar al mercado RUSTIQUE, ubicada en la ciudad de Tandil.
                 La marca cuenta con una gran variedad de modelos tradicionales y rusticos, que combinan utilidad, diseño
@@ -25,7 +25,7 @@
         <!-- ARTICULO CON MAPA DE DONDE NOS ENCONTRAMOS -->
         <article class="ubicacion">
             <!-- titulo del mapa de donde nos encontramos -->
-            <h2 class="tituloubicacion">¿Dónde nos encontramos? </h2>
+            <h2 class="tituloubicacion text-dark" >¿Dónde nos encontramos? </h2>
             <!-- finaliza el titulo del mapa de donde nos encontramos -->
 
             <!-- mapa donde nos encontramos -->

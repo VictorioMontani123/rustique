@@ -18,6 +18,15 @@ class DataViewAdmin{
         $this->smarty->display('templates/login.tpl');
 
     }
+    
+    public function ShowLoginError(){
+        $this->smarty->assign('titulo', 'LOGIN' );
+        $this->smarty->assign('nombre', 'NOMBRE');
+        $this->smarty->assign('contrasenia', 'CONTRASEÑA');
+        
+        $this->smarty->display('templates/loginError.tpl');
+
+    }
 
 
     

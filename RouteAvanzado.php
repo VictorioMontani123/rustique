@@ -8,7 +8,7 @@
 
     $r = new Router();
 
-    
+    //$r->addRoute('', "GET", "db_controller", "Home");
     
     $r->addRoute("home", "GET", "db_controller", "Home");
 
